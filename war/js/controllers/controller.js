@@ -1,0 +1,168 @@
+var app = angular.module("app", [ 'ngRoute', 'ngCookies' ]);
+app.config([ '$routeProvider', function($routeProvider) {
+
+	$routeProvider.when('/inicio', {
+		templateUrl : "pages/inicio.html",
+		controller : "inicioController"
+	});
+	$routeProvider.when('/empresa', {
+		templateUrl : "pages/datosEmpresa.html",
+//		controller : "empresaController"
+	});
+	$routeProvider.when('/clientes', {
+		templateUrl : "pages/clientes.html",
+		controller : "clientesController"
+	});
+	$routeProvider.when('/envase', {
+		templateUrl : "pages/envases.html",
+		controller : "envaseController"
+	});
+	$routeProvider.when('/clientes/edit/:id', {
+		templateUrl : "pages/clientesEdita.html",
+		controller : "clientesEditController"
+	});
+	$routeProvider.when('/proveedores', {
+		templateUrl : "pages/proveedores.html",
+		controller : "proveedoresController"
+	});
+	$routeProvider.when('/proveedores/edit/:id', {
+		templateUrl : "pages/proveedoresEdita.html",
+		controller : "proveedoresEditController"
+	});
+	$routeProvider.when('/herramientas', {
+		templateUrl : "pages/herramientas.html",
+		controller : "herramientasController"
+	});
+	$routeProvider.when('/asignarProducto', {
+		templateUrl : "pages/asignarProducto.html",
+		controller : "productoController"
+	});
+	$routeProvider.when('/almacen', {
+		templateUrl : "pages/almacen.html",
+		controller : "almacenController"
+	});
+	$routeProvider.when('/altaAlmacen', {
+		templateUrl : "pages/altaAlmacen.html",
+		controller : "almacenController"
+	});
+	$routeProvider.when('/herramientas/edit/:id', {
+		templateUrl : "pages/herramientasEdita.html",
+		controller : "herramientasEditController"
+	});
+	$routeProvider.when('/materiaPrima', {
+		templateUrl : "pages/materiaPrima.html",
+		controller : "tornillosController"
+	});
+	$routeProvider.when('/materiaPrima/edit/:id', {
+		templateUrl : "pages/tornillosEdita.html",
+		controller : "tornillosEditController"
+	});
+	$routeProvider.when('/altaCliente', {
+		templateUrl : "pages/altaCliente.html",
+		controller : "clientesController"
+	});
+	$routeProvider.when('/altaProveedor', {
+		templateUrl : "pages/altaProveedor.html",
+		controller : "proveedoresController"
+	});
+	$routeProvider.when('/altaHerramienta', {
+		templateUrl : "pages/altaHerramienta.html",
+		controller : "herramientasController"
+	});
+	$routeProvider.when('/altaMateriaPrima', {
+		templateUrl : "pages/altaMateriaPrima.html",
+		controller : "tornillosController"
+	});
+	$routeProvider.when('/altaLotes/:tipo/:id', {
+		templateUrl : "pages/altaLotes.html",
+		controller : "lotesController"
+	});
+	
+	$routeProvider.when('/ventas', {
+		templateUrl : "pages/venta.html",
+		controller : "ventaController"
+	});
+	
+	$routeProvider.when('/ventasList', {
+		templateUrl : "pages/ventasList.html",
+		controller : "ventaListController"
+	});
+
+	$routeProvider.when('/inventario', {
+		templateUrl : "pages/inventario.html",
+		
+		controller : "inventarioController"
+	});
+	
+	$routeProvider.when('/alertas', {
+		templateUrl : "pages/alertas.html",
+		
+		controller : "alertaController"
+	});
+	
+	$routeProvider.when('/login', {
+		templateUrl : "pages/login.html",
+		controller : "navigation"
+	});
+
+	$routeProvider.when('/altaperfiles', {
+		templateUrl : "pages/altaperfil.html",
+		controller : "perfilController"
+	})
+
+	$routeProvider.when('/modificarperfiles', {
+		templateUrl : "pages/modificaperfiles.html",
+		controller : "controladorListaPerfiles"
+	})
+
+	$routeProvider.when('/altausuarios', {
+		templateUrl : "pages/altausuario.html",
+		controller : "usuarioController"
+	})
+
+	$routeProvider.when('/modificarusuarios', {
+		templateUrl : "pages/modificausuarios.html",
+		controller : "controladorListaUsuarios"
+	})
+
+	$routeProvider.when('/resetPass', {
+		templateUrl : "pages/resetpass.html",
+		controller : "controladorReset"
+	})
+	$routeProvider.when('/archivo', {
+		templateUrl : "pages/archivo.html",
+		controller : "archivoController"
+	});
+	
+	$routeProvider.when('/datosFacturacion', {
+		templateUrl : "pages/emisores.html",
+		controller : "emisoresListController"
+	});
+	
+	$routeProvider.when('/formula', {
+		templateUrl : "pages/formula.html",
+		controller : "formulaController"
+	});
+	
+	$routeProvider.when('/altaEmisor', {
+		templateUrl : "pages/altaEmisor.html",
+		controller : "emisorController"
+	});
+	
+	$routeProvider.when('/editEmisor/:id', {
+		templateUrl : "pages/altaEmisor.html",
+		controller : "emisorEditController"
+	});
+	
+	$routeProvider.otherwise({
+		redirectTo : '/inicio'
+	});
+} ]);
+
+app.controller('inicioController',function(){
+	
+})
+
+app.run(['$rootScope','sessionService',function ($rootScope,sessionService) {
+	sessionService.isAuthenticated();
+}]);

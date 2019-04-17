@@ -1,0 +1,11 @@
+<!-- Indices written at Thu, 1 Nov 2018 13:16:24 CST -->
+
+<datastore-indexes autoGenerate="true">
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Lote" ancestor="false" source="auto">
+        <property name="idProducto" direction="asc"/>
+        <property name="fecha" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>
